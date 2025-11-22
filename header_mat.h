@@ -1,15 +1,13 @@
-#ifndef GRAPH_H
-#define GRAPH_H
+#ifndef HEADER_H
+#define HEADER_H
 
-typedef struct {
-    int vertices;
-    int** adjMatrix;
-} Graph;
+#define Max 10
 
-Graph* createGraph(int vertices);
-void addEdge(Graph* graph, int src, int dest);
-void displayAdjMatrix(Graph* graph);
-void freeGraph(Graph* graph);
+extern int adj[Max][Max];
+extern int n;
+
+void addEdge(int u, int v, int directed);
+void displayMatrix();
 
 #endif
 
