@@ -1,14 +1,18 @@
 # Makefile
 
-a.out: mat_main.o mat.o
-	gcc mat_main.o mat.o
+# target program
+# default rule
+a.out: main_mat.o mat.o
+	gcc main_mat.o mat.o
 
-mat_main.o: mat_main.c header_mat.h
-	gcc -c mat_main.c
+# compile source files into object files
+main.o: main_mat.c header_mat.h
+	gcc -c main_mat.c
 
 mat.o: mat.c header_mat.h
 	gcc -c mat.c
 
+# clean up build files
 clean:
 	rm -f *.o a.out
 
