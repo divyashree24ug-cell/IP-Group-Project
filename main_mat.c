@@ -17,6 +17,12 @@ int main() {
 
     displayMatrix();
 
+    printf("\nRunning BFS from node 0:\n");
+    BFS(0);    
+    printf("\n");
+    printf("\nRunning DFS from node 0:\n");
+    DFS(0);
+
     return 0;
 }
 
