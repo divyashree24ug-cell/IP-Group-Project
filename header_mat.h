@@ -8,6 +8,7 @@ extern int n;
 
 void addEdge(int u, int v, int directed);
 void displayMatrix();
+void DFS(int start);
 
 #endif
 
