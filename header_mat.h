@@ -9,6 +9,8 @@ extern int n;
 void addEdge(int u, int v, int directed);
 void displayMatrix();
 void DFS(int start);
+void BFS(int start);
+
 
 typedef struct Node {
     int vertex;

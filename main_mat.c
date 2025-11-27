@@ -29,6 +29,9 @@ int main() {
     addEdge(g, 0, 2);
 
     printGraph(g);
+    //printf("\n");
+    //printf("\nRunning DFS from node 0:\n");
+    //DFS(0);
 
     return 0;
 }
