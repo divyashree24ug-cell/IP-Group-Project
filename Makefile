@@ -1,12 +1,10 @@
-# Program 1: adjacency matrix
-matrix: main_matrix.o matrix_graph.o bfs.o 
-	gcc main_matrix.o matrix_graph.o bfs.o  -o matrix
+# ===============================
+# Program 1: Adjacency Matrix (BFS)
+# ===============================
 
-# Program 2: adjacency list
-list: main_list.o list_graph.o dfs_iterative.o
-	gcc main_list.o list_graph.o dfs_iterative.o -o list
+matrix: main_matrix.o matrix_graph.o bfs.o
+	gcc main_matrix.o matrix_graph.o bfs.o -o matrix
 
-# Compiling matrix files
 main_matrix.o: main_matrix.c graph_all.h
 	gcc -c main_matrix.c
 
@@ -16,7 +14,14 @@ matrix_graph.o: matrix_graph.c graph_all.h
 bfs.o: bfs.c graph_all.h
 	gcc -c bfs.c
 
-# Compiling list files
+
+# ===============================
+# Program 2: Adjacency List (DFS)
+# ===============================
+
+list: main_list.o list_graph.o dfs_iterative.o
+	gcc main_list.o list_graph.o dfs_iterative.o -o list
+
 main_list.o: main_list.c graph_all.h
 	gcc -c main_list.c
 
@@ -25,6 +30,11 @@ list_graph.o: list_graph.c graph_all.h
 
 dfs_iterative.o: dfs_iterative.c graph_all.h
 	gcc -c dfs_iterative.c
+
+
+# ===============================
+# Clean command
+# ===============================
 
 clean:
 	rm -f *.o matrix list
