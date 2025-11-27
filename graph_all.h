@@ -3,16 +3,15 @@
 
 #define Max 10
 
-/********** MATRIX GRAPH **********/
+// MATRIX GRAPH 
 extern int adj[Max][Max];
 extern int n;
 
 void addEdge(int u, int v, int directed);
 void displayMatrix();
 void BFS(int start);
-void DFS(int start);
 
-/********** LIST GRAPH **********/
+//LIST GRAPH
 typedef struct Node {
     int vertex;
     struct Node* next;
