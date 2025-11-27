@@ -1,0 +1,12 @@
+As asked earlier the difference between pre and post increment.
+
+1. ++top is pre increment so for example, 
+int top = 5
+and I do int x = ++top, first the value of top will become 6 and then it will be assigned to x.
+so here top =6 and x = 6
+
+2. top++ is post - increment so for example, 
+int top = 5
+and then I do int x = top++, first it will assign the value to x and then it will increment
+so here top = 6 and x = 5.
+
