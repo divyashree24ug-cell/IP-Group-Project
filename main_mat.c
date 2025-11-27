@@ -22,7 +22,15 @@ int main() {
     printf("\n");
     printf("\nRunning DFS from node 0:\n");
     DFS(0);
+    Graph* g = createGraph(3);
+
+    addEdge(g, 0, 1);
+    addEdge(g, 1, 2);
+    addEdge(g, 0, 2);
+
+    printGraph(g);
 
     return 0;
 }
+
 
