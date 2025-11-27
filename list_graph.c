@@ -1,34 +1,40 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "graph_all.h"
 
-void DFS_iterative(Graph* g, int start) {
-    int visited[g->numVertices];
-    for (int i = 0; i < g->numVertices; i++)
-        visited[i] = 0;
+Node* createNode(int v) {
+    Node* n = malloc(sizeof(Node));
+    n->vertex = v;
+    n->next = NULL;
+    return n;
+}
 
-    int stack[g->numVertices];
-    int top = -1;
+Graph* createGraph(int V) {
+    Graph* g = malloc(sizeof(Graph));
+    g->numVertices = V;
+    g->adjLists = malloc(V * sizeof(Node*));
 
-    stack[++top] = start;
+    for (int i = 0; i < V; i++)
+        g->adjLists[i] = NULL;
 
-    while (top != -1) {
-        int node = stack[top--];
+    return g;
+}
 
-        if (!visited[node]) {
-            printf("%d ", node);
-            visited[node] = 1;
-        }
+void addEdgeList(Graph* g, int src, int dest) {
+    Node* n = createNode(dest);
+    n->next = g->adjLists[src];
+    g->adjLists[src] = n;
+}
 
-        // Add neighbors in reverse order to visit in correct order
-        Node* temp = g->adjLists[node];
+void printGraph(Graph* g) {
+    for (int i = 0; i < g->numVertices; i++) {
+        printf("%d: ", i);
+        Node* temp = g->adjLists[i];
         while (temp != NULL) {
-            if (!visited[temp->vertex]) {
-                stack[++top] = temp->vertex;
-            }
+            printf("%d -> ", temp->vertex);
             temp = temp->next;
         }
+        printf("NULL\n");
     }
-
-    printf("\n");
 }
 

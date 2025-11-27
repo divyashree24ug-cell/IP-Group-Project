@@ -13,22 +13,14 @@ int main() {
     addEdge(2, 3, 0);
     addEdge(3, 4, 0);
 
-
-
     displayMatrix();
 
     printf("\nRunning BFS from node 0:\n");
-    BFS(0);    
-    printf("\n");
-    printf("\nRunning DFS from node 0:\n");
-    DFS(0);
-
- //   printGraph(g);
-    //printf("\n");
-    //printf("\nRunning DFS from node 0:\n");
-    //DFS(0);
+    BFS(0);
+    
+ //   printf("\n\nRunning DFS from node 0:\n");
+   // DFS(0);
 
     return 0;
 }
-
 

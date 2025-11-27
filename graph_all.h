@@ -1,22 +1,18 @@
 #ifndef GRAPH_ALL_H
 #define GRAPH_ALL_H
 
+#define Max 10
 
-#define Max 10   // for adjacency matrix
-
-
-// ADJACENCY MATRIX DECLARATIONS
-
+/********** MATRIX GRAPH **********/
 extern int adj[Max][Max];
 extern int n;
 
 void addEdge(int u, int v, int directed);
 void displayMatrix();
-void DFS(int start);   // recursive DFS using matrix
-void BFS(int start);   // BFS using matrix
+void BFS(int start);
+void DFS(int start);
 
-// ADJACENCY LIST DECLARATIONS
-
+/********** LIST GRAPH **********/
 typedef struct Node {
     int vertex;
     struct Node* next;
@@ -27,15 +23,12 @@ typedef struct Graph {
     Node** adjLists;
 } Graph;
 
-// graph creation
 Graph* createGraph(int V);
 Node* createNode(int v);
-void addEdgeList(Graph* g, int src, int dest);  // renamed from addedge
+void addEdgeList(Graph* g, int src, int dest);
 void printGraph(Graph* g);
 
-// DFS iterative (using stack, adjacency list)
 void DFS_iterative(Graph* g, int start);
-
 
 #endif
 
