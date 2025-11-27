@@ -19,10 +19,21 @@ int main() {
 
     printf("\nRunning BFS from node 0:\n");
     BFS(0);    
+    printf("\n");
+    printf("\nRunning DFS from node 0:\n");
+    DFS(0);
+    Graph* g = createGraph(3);
+
+    addEdge(g, 0, 1);
+    addEdge(g, 1, 2);
+    addEdge(g, 0, 2);
+
+    printGraph(g);
     //printf("\n");
     //printf("\nRunning DFS from node 0:\n");
     //DFS(0);
 
     return 0;
 }
+
 

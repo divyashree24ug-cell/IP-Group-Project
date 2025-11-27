@@ -12,5 +12,21 @@ void DFS(int start);
 void BFS(int start);
 
 
+typedef struct Node {
+    int vertex;
+    struct Node* next;
+} Node;
+
+typedef struct Graph {
+    int numVertices;
+    Node** adjLists;
+} Graph;
+
+Node* createNode(int v);
+Graph* createGraph(int V);
+void addedge(Graph* g, int src, int dest);
+void printGraph(Graph* g);
+
+
 #endif
 
