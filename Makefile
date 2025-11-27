@@ -1,31 +1,41 @@
-# Makefile
+# ===============================
+# Program 1: Adjacency Matrix (BFS)
+# ===============================
 
-# target program
-a.out: main_mat.o mat.o bfs.o dfs.o main_graph.o graph.o
-	gcc main_mat.o mat.o bfs.o dfs.o main_graph.o graph.o -o a.out
+matrix: main_matrix.o matrix_graph.o bfs.o
+	gcc main_matrix.o matrix_graph.o bfs.o -o matrix
 
-main_graph.o: main_graph.c header_graph.h
-	gcc -c main_graph.c
+main_matrix.o: main_matrix.c graph_all.h
+	gcc -c main_matrix.c
 
-graph.o: graph.c header_graph.h
-	gcc -c graph.c
+matrix_graph.o: matrix_graph.c graph_all.h
+	gcc -c matrix_graph.c
 
-
-# compile source files into object files
-main_mat.o: main_mat.c header_mat.h
-	gcc -c main_mat.c
-
-mat.o: mat.c header_mat.h
-	gcc -c mat.c
-
-bfs.o: bfs.c header_mat.h
+bfs.o: bfs.c graph_all.h
 	gcc -c bfs.c
 
-dfs.o: dfs.c header_mat.h
-	gcc -c dfs.c
+
+# ===============================
+# Program 2: Adjacency List (DFS)
+# ===============================
+
+list: main_list.o list_graph.o dfs_iterative.o
+	gcc main_list.o list_graph.o dfs_iterative.o -o list
+
+main_list.o: main_list.c graph_all.h
+	gcc -c main_list.c
+
+list_graph.o: list_graph.c graph_all.h
+	gcc -c list_graph.c
+
+dfs_iterative.o: dfs_iterative.c graph_all.h
+	gcc -c dfs_iterative.c
 
 
-# clean up build files
+# ===============================
+# Clean command
+# ===============================
+
 clean:
-	rm -f *.o a.out
+	rm -f *.o matrix list
 
